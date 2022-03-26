@@ -13,13 +13,13 @@ string convertToString(char* a)
 
 int main()
 {
-    string sources[100];
+    string sources[400];
     int scount = 0;
     bool dup = true;
-    char line[15];
+    char line[50];
     string sline;
     ifstream inputFile;
-    inputFile.open("testCSV2.csv");
+    inputFile.open("btTest.csv");
 
     cout << "Hello World!\n";
     
@@ -54,7 +54,7 @@ int main()
 
             cout <<"cv:"<<line <<"sv:"<< sline << "\n";
            
-            if(dup && scount < 100)
+            if(dup && scount < 399)
             {
                 sources[scount] = sline;
                 scount++;
@@ -68,8 +68,10 @@ int main()
         }
     }
 
-    for (int i = 0; i<= scount; i++)
+    for (int i = 0; i< scount; i++)
     {
         cout << sources[i]<<"\n";
     }
+    cout << scount<<endl;
+    inputFile.close();
 }
