@@ -11,8 +11,8 @@ var score
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
-	new_game() 
-
+	var music = $music
+	music.playing = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -20,16 +20,21 @@ func _ready():
 
 
 func game_over():
+	$HUD.show_game_over()
 	$scoreTimer.stop()
 	$mobTimer.stop()
 
 func new_game():
 	score = 0
+	$HUD.update_score(score)
+	$HUD.show_message("Get Ready")
 	$player.start($startPosition.position)
 	$startTimer.start()
+	get_tree().call_group("mobs", "queue_free")
 
 func _on_scoreTimer_timeout():
 	score += 1
+	$HUD.update_score(score)
 
 func _on_startTimer_timeout():
 	$mobTimer.start()
@@ -54,7 +59,8 @@ func _on_mobTimer_timeout():
 	mob.rotation = direction
 
 	# Choose the velocity for the mob.
-	var velocity = Vector2(rand_range(150.0, 250.0), 0.0)
+	var rMult = rand_range(.5,3)
+	var velocity = Vector2(rand_range(150.0, 250.0), 0.0)*rMult
 	mob.linear_velocity = velocity.rotated(direction)
 
 	# Spawn the mob by adding it to the Main scene.
