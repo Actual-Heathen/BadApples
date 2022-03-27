@@ -14,7 +14,6 @@ var screen_size
 func _ready():
 	hide()
 	screen_size = get_viewport_rect().size
-	pass # Replace with function body.
 
 func _process(delta):
 	var velocity = Vector2.ZERO # The player's movement vector.
@@ -39,3 +38,15 @@ func _process(delta):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_player_body_entered(body):
+	hide() # Player disappears after being hit.
+	emit_signal("hit")
+	# Must be deferred as we can't change physics properties on a physics callback.
+	$CollisionShape2D.set_deferred("disabled", true)
+
+func start(pos):
+	position = pos
+	show()
+	$CollisionShape2D.disabled = false
