@@ -1,7 +1,7 @@
 #include <fstream>
 #include <iostream>
 #include <string>
-#include <bits/stdc++.h>
+//#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -15,7 +15,7 @@ int main()
     ifstream inputFile;
     ofstream outFile;
     inputFile.open("TSharkStuff/test.csv");
-    outFile.open("spaceInvedersTest/file.txt");
+    outFile.open("file.txt");
     
      getline(inputFile,line); //dump header
     while(inputFile)
