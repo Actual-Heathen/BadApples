@@ -1,7 +1,7 @@
 Find com port for sniffer:
 tshark -D
 
-Use result for interface
+Use result for <interface>
 
 
 
