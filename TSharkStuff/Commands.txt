@@ -1,5 +1,13 @@
+Find com port for sniffer:
+tshark -D
+
+Use result for interface
+
+
+
+
 Command 1:
-tshark -a duration:10 -w test.pcap
+tshark -i <interface> -a duration:10 -w test.pcap
 Command 2:
 tshark -r test.pcap -Y "btcommon.eir_ad.entry.company_id == 0x004c" -T fields -e btle.advertising_address -E header=y 
 -E separator=, -E quote=d -E occurrence=f > test.csv
