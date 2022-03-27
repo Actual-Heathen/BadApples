@@ -2,7 +2,7 @@ extends Area2D
 export (PackedScene) var fire_scene
 signal hit
 
-export var speed = 400
+export var speed = 600
 var screen_size
 
 
@@ -25,7 +25,7 @@ func _process(delta):
 	var fire = fire_scene.instance()
 	fire.position = position + direction *10
 	fire.rotation = rotation -PI/2
-	fire.linear_velocity = direction*800
+	fire.linear_velocity = direction*1200
 	var velocity = Vector2.ZERO # The player's movement vector.
 	if Input.is_action_pressed("right"):
 		velocity.x += 1
