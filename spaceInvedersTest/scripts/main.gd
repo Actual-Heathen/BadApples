@@ -3,9 +3,18 @@ extends Node
 export(PackedScene) var mob_scene
 var score
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+#include <iostream>
+#include <fstream>
+
+res://file.txt
+
+while (!eof())
+
+name_array[400] = [];
+# loop for j = 0 to 400
+for j in [400]:
+	print(name_array[j])
+
 
 
 # Called when the node enters the scene tree for the first time.
