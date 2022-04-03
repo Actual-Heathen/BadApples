@@ -1,4 +1,6 @@
 # UAHHackathon2022
+The project uses Wireshark to bring in MAC addresses of Apple products over a 10 second interval to generate alien enemies.
+
 
 First the nRF52840 needs to be installed correctly.
 
