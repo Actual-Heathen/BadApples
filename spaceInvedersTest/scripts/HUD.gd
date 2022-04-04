@@ -38,7 +38,3 @@ func _on_MessageTimer_timeout():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-
-func new_game():
-	pass # Replace with function body.

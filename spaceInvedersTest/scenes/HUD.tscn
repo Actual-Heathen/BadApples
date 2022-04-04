@@ -62,5 +62,6 @@ __meta__ = {
 wait_time = 2.0
 one_shot = true
 
+[connection signal="start_game" from="." to="." method="new_game"]
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="timeout" from="MessageTimer" to="." method="_on_MessageTimer_timeout"]

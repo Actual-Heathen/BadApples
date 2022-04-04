@@ -38,7 +38,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("shoot") && is_visible():
 		get_parent().add_child(fire)
 		$AudioStreamPlayer.play()
-	
+
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 		$AnimatedSprite.play()
